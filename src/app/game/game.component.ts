@@ -17,7 +17,9 @@ export class GameComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.status = 'Next player: ' + (this.xIsNext ? 'X' : 'O');
+  }
   jumpTo(num: number) {
     this.stepNumber = num;
     this.xIsNext = num % 2 === 0;
