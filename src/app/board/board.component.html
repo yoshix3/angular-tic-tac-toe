@@ -1,7 +1,7 @@
 <div *ngFor="let i of [0, 1, 2]" [className]="'board-row'">
   <app-square
     *ngFor="let j of [0, 1, 2]"
-    [value]=""
+    [value]="squares[3 * i + j]"
     (clicked)="onClicked(3 * i + j)"
   ></app-square>
 </div>
