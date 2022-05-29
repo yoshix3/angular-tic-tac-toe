@@ -1,2 +1,7 @@
-<p>board</p>
-<app-square></app-square>
+<div *ngFor="let i of [0, 1, 2]" [className]="'board-row'">
+  <app-square
+    *ngFor="let j of [0, 1, 2]"
+    [value]=""
+    (clicked)="onClicked(3 * i + j)"
+  ></app-square>
+</div>
