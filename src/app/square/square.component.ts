@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-square',
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./square.component.css'],
 })
 export class SquareComponent implements OnInit {
-  @Input() value: string;
+  value = input.required<string>();
   @Output() clicked = new EventEmitter<number>();
 
   constructor() {}

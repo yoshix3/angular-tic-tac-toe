@@ -8,14 +8,20 @@
   <div [className]="'game-info'">
     <div [className]="'status'">{{ status }}</div>
     <ol>
-      <li *ngFor="let step of history; index as move; trackBy: trackFn">
-        <button *ngIf="move === 0" (click)="jumpTo(move)">
+      @for (step of history; let move = $index; track $index) {
+      <li>
+        @if (move === 0) {
+        <button (click)="jumpTo(move)">
           Go to game start
         </button>
-        <button *ngIf="move !== 0" (click)="jumpTo(move)">
+        }
+        @else {
+        <button (click)="jumpTo(move)">
           Go to move #{{ move }}
         </button>
+      }
       </li>
+      }
     </ol>
   </div>
 </div>

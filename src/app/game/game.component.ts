@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardComponent } from '../board/board.component';
 
 type squareType = {
   squares: string[];
@@ -8,6 +9,7 @@ type squareType = {
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css'],
+  imports: [BoardComponent]
 })
 export class GameComponent implements OnInit {
   history: squareType[] = [{ squares: Array(9).fill(null) }];
