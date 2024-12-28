@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Check') {
             steps {
-                script {
+                sh ```
                     pwd
                     node --version
-                }
+                ```
             }
         }
     }
